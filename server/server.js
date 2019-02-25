@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/restaurant/:id', (req, res) => {
-  // const { id } = Number(req.params.id);
-  console.log(req.params);
   selectRestaurant(Number(req.params.id))
     .then((data) => {
       res.status(200).send(JSON.stringify(data));
