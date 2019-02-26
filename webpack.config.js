@@ -7,20 +7,23 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
-        }
+        },
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      }
-    ]
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
     path: __dirname + '/client/dist',
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
     contentBase: './client/dist',
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.css'],
   },
 };
