@@ -1,8 +1,8 @@
 import React from 'react';
 
 class MapText extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };
@@ -10,7 +10,7 @@ class MapText extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="map-text">
         <h1>Hello from MapText!</h1>
         <ul>
           <li>

@@ -3,8 +3,8 @@ import MapBox from './MapBox';
 import MapText from './MapText';
 
 class Container extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };
