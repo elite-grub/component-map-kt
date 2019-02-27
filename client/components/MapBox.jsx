@@ -1,7 +1,6 @@
 import React from 'react';
-import Container from './Container';
 
-class App extends React.Component {
+class MapBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,11 +11,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello from App!</h1>
-        <Container />
+        <h1>Hello from MapBox!</h1>
       </div>
     );
   }
 }
 
-export default App;
+export default MapBox;
