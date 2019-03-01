@@ -10,15 +10,15 @@ class MapText extends React.Component {
     this.state = {
       isToggleOn: false,
     };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn,
-    }));
-    console.log('The link was clicked from Get Directions.');
-  }
+  // handleClick() {
+  //   this.setState(state => ({
+  //     isToggleOn: !state.isToggleOn,
+  //   }));
+  //   console.log('The link was clicked from Get Directions.');
+  // }
 
   /*
 on map click
@@ -31,6 +31,8 @@ OR
     const {
       street, cityStateZip, phone, website,
     } = this.props.data;
+
+    // const { } = this.props.handleClick;
 
     return (
       <div className="map-text">
@@ -45,7 +47,7 @@ OR
 
         <BlueLinks>
           <GetDirections size="18" />
-          <a onClick={this.handleClick}>Get Directions</a>
+          <a onClick={this.props.handleClick}>Get Directions</a>
         </BlueLinks>
 
         <GetPhone size="18" />

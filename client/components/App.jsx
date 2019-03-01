@@ -13,7 +13,18 @@ class App extends React.Component {
       getRandomInt: function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max) + 1);
       },
+      // btn.onclick = function() {
+        //   modal.style.display = "block";
+        // }
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      toggleMapOn: !state.toggleMapOn,
+    }));
+    console.log('The link was clicked from APP!!!');
   }
 
   componentDidMount() {
@@ -34,8 +45,8 @@ class App extends React.Component {
     return (
       <Font>
         <Border className="container">
-          <MapBox />
-          <MapText data={this.state.data} />
+          <MapBox handleClick={this.handleClick} />
+          <MapText data={this.state.data} handleClick={this.handleClick} />
           <MapModal />
         </Border>
       </Font>

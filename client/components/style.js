@@ -50,3 +50,18 @@ export const BlueLinks = styled.div`
 export const Font = styled.div`
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 `;
+
+/* The Modal (background) */
+export const ModalStyle = styled.div`
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+   
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: none; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.8); 
+`;
