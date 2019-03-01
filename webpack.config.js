@@ -24,6 +24,6 @@ module.exports = {
     contentBase: './client/dist',
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.css'],
+    extensions: ['.jsx', '.js', '.css', '.png'],
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import MapText from './MapText';
+import MapText from '../client/components/MapText';
 
 function setup() {
   const wrapper = shallow(<MapText />);

@@ -1,4 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+// import {Directions} from 'styled-icons/material/Directions';
+import {
+  GetDirections, GetLocation, GetPhone, GetLink, GetCalendar, GetIphone, BlueLinks,
+} from './style.js';
+
+
+// const App = () => <RedZap />
 
 class MapText extends React.Component {
   constructor(props) {
@@ -9,30 +18,49 @@ class MapText extends React.Component {
   }
 
   render() {
+    const {
+      name, street, cityStateZip, phone, website,
+    } = this.props.data;
+
     return (
       <div className="map-text">
-        <h1>Hello from MapText!</h1>
-        <ul>
-          <li>
-            Pier 39
-            <br />
-            Ste A-202
-            <br />
-            San Francisco, CA 94133
-            <br />
-            Fisherman's Wharf, North
-            <br />
-            Beach/Telegraph Hill
-          </li>
-          <li>Get Directions</li>
-          <li>(415) 421-2442</li>
-          <li>fogharbor.com</li>
-          <li>Make a Reservation</li>
-          <li>Send to your Phone</li>
-        </ul>
+        
+        <GetLocation size="18" />
+        <b>{street}</b>
+        <br />
+        <b>{cityStateZip}</b>
+        <br />
+
+        {/* click sends to map modal */}
+        
+        <BlueLinks>
+        <GetDirections size="18" />
+          Get Directions
+        </BlueLinks>
+       
+        <GetPhone size="18" />
+        {phone}
+        <br />
+        <BlueLinks>
+        <GetLink size="18" />
+        {website}
+        </BlueLinks>
+        <BlueLinks>
+        <GetCalendar size="18" />
+            Make a Reservation
+        </BlueLinks>
+        <BlueLinks>
+        <GetIphone size="18" />
+          Send to your Phone
+        </BlueLinks>
+
       </div>
     );
   }
 }
+
+// MapText.propTypes = {
+//   props.data: PropTypes.object,
+// };
 
 export default MapText;

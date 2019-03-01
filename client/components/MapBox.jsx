@@ -11,7 +11,7 @@ class MapBox extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello from MapBox!</h1>
+        <img src="https://s3-us-west-1.amazonaws.com/placeholders-kt/mapSample.png" alt="Map Placeholder" height="135" width="286" />
       </div>
     );
   }
