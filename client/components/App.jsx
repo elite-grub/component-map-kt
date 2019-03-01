@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import MapBox from './MapBox';
 import MapText from './MapText';
+import MapModal from './MapModal';
 import { Border, Font } from './style.js';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -20,15 +20,9 @@ class App extends React.Component {
     this.getRestaurant();
   }
 
-  // function getRandomInt(max) {
-  //   return Math.floor(Math.random() * Math.floor(max) + 1);
-  // }
-
-
   getRestaurant() {
     axios.get(`/restaurant/${this.state.getRandomInt(100)}`)
       .then((res) => {
-        // console.log()
         const restaurant = res.data[0];
         console.log('got data to CLient!!', restaurant);
         this.setState({ data: restaurant });
@@ -42,6 +36,7 @@ class App extends React.Component {
         <Border className="container">
           <MapBox />
           <MapText data={this.state.data} />
+          <MapModal />
         </Border>
       </Font>
     );

@@ -1,30 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-// import {Directions} from 'styled-icons/material/Directions';
 import {
   GetDirections, GetLocation, GetPhone, GetLink, GetCalendar, GetIphone, BlueLinks,
 } from './style.js';
-
-
-// const App = () => <RedZap />
 
 class MapText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      isToggleOn: false,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+    console.log('The link was clicked from Get Directions.');
+  }
+
+  /*
+on map click
+OR
+"Get Directions" click
+  event handler opens MapModal
+*/
 
   render() {
     const {
-      name, street, cityStateZip, phone, website,
+      street, cityStateZip, phone, website,
     } = this.props.data;
 
     return (
       <div className="map-text">
-        
+
         <GetLocation size="18" />
         <b>{street}</b>
         <br />
@@ -32,25 +42,25 @@ class MapText extends React.Component {
         <br />
 
         {/* click sends to map modal */}
-        
+
         <BlueLinks>
-        <GetDirections size="18" />
-          Get Directions
+          <GetDirections size="18" />
+          <a onClick={this.handleClick}>Get Directions</a>
         </BlueLinks>
-       
+
         <GetPhone size="18" />
         {phone}
         <br />
         <BlueLinks>
-        <GetLink size="18" />
-        {website}
+          <GetLink size="18" />
+          {website}
         </BlueLinks>
         <BlueLinks>
-        <GetCalendar size="18" />
+          <GetCalendar size="18" />
             Make a Reservation
         </BlueLinks>
         <BlueLinks>
-        <GetIphone size="18" />
+          <GetIphone size="18" />
           Send to your Phone
         </BlueLinks>
 
