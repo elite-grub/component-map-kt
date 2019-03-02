@@ -7,6 +7,7 @@ import { CalendarEvent } from 'styled-icons/boxicons-regular/CalendarEvent';
 import { PhoneIphone } from 'styled-icons/material/PhoneIphone';
 import { Edit } from 'styled-icons/material/Edit';
 
+// ICON STYLES
 export const GetDirections = styled(Directions)`
   color: grey;
 `;
@@ -53,10 +54,9 @@ export const Font = styled.div`
 
 /* The Modal (background) */
 export const ModalStyle = styled.div`
-  display: none; 
+  
   position: fixed; 
   z-index: 1; 
-   
   left: 0;
   top: 0;
   width: 100%; 
@@ -64,4 +64,12 @@ export const ModalStyle = styled.div`
   overflow: none; 
   background-color: rgb(0,0,0); 
   background-color: rgba(0,0,0,0.8); 
+`;
+
+/* The Close Button */
+export const CloseStyle = styled.div`
+  color: white;
+  font-size: 15px;
+  font-weight: normal;
+  padding: .05px;
 `;

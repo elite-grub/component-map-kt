@@ -13,18 +13,10 @@ class App extends React.Component {
       getRandomInt: function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max) + 1);
       },
-      // btn.onclick = function() {
-        //   modal.style.display = "block";
-        // }
+      toggleMap: 'none',
     };
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      toggleMapOn: !state.toggleMapOn,
-    }));
-    console.log('The link was clicked from APP!!!');
+    this.closeClick = this.closeClick.bind(this);
   }
 
   componentDidMount() {
@@ -41,13 +33,27 @@ class App extends React.Component {
       .catch(err => err);
   }
 
+  handleClick() {
+    this.setState(state => ({
+      toggleMap: 'block',
+    }));
+    console.log('The link was clicked from APP!!!');
+  }
+
+  closeClick() {
+    this.setState(state => ({
+      toggleMap: 'none',
+    }));
+    console.log('Close Button clicked in Modal View');
+  }
+
   render() {
     return (
       <Font>
         <Border className="container">
           <MapBox handleClick={this.handleClick} />
           <MapText data={this.state.data} handleClick={this.handleClick} />
-          <MapModal />
+          <MapModal toggleMap={this.state.toggleMap} closeClick={this.closeClick} />
         </Border>
       </Font>
     );

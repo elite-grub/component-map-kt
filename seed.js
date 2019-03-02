@@ -60,4 +60,3 @@ sequelize.authenticate().then(() => {
       })
       .catch(err => console.log(err));
   });
-/* .then(() => sequelize.close()); */
