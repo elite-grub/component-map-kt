@@ -27,7 +27,11 @@ sequelize.authenticate().then(() => {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      address: {
+      street: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      cityStateZip: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -47,7 +51,8 @@ sequelize.authenticate().then(() => {
         for (let i = 0; i < 100; i += 1) {
           Restaurants.create({
             name: faker.lorem.words(),
-            address: faker.address.streetAddress(),
+            street: faker.address.streetAddress(),
+            cityStateZip: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
             phone: faker.phone.phoneNumberFormat(),
             website: faker.internet.url(),
           });
@@ -55,4 +60,3 @@ sequelize.authenticate().then(() => {
       })
       .catch(err => console.log(err));
   });
-/* .then(() => sequelize.close()); */
