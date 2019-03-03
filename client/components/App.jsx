@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getRestaurant() {
-    axios.get(`/restaurant/${this.state.getRandomInt(100)}`)
+    axios.get(`http://localhost:3333/restaurant/${this.props.id}`)
       .then((res) => {
         const restaurant = res.data[0];
         console.log('got data to CLient!!', restaurant);
