@@ -1,2 +1,7 @@
 node_modules
 server/database/config.js
+docker-compose.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk
+!.elasticbeanstalk/*.config.yml
+!.elasticbeanstalk/*.global.yml

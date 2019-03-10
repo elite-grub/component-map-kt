@@ -4,6 +4,7 @@ import MapBox from './MapBox';
 import MapText from './MapText';
 import MapModal from './MapModal';
 import { Border, Font } from './style.js';
+import { config } from '../../server/database/config.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
 
   getRestaurant() {
-    axios.get(`http://localhost:3333/restaurant/${this.props.id}`)
+    axios.get(`${config.localhost}/restaurant/${this.props.id}`)
       .then((res) => {
         const restaurant = res.data[0];
         console.log('got data to CLient!!', restaurant);
